@@ -1,0 +1,38 @@
+#newButtonInicio {
+    background-color: #4CAF50; /* Verde claro */
+}
+
+.producto button {
+    background-color: #4CAF50; /* Verde claro */
+}
+
+/*.boton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}*/
+
+/* Cambia el color de fondo de los botones de Inicio y Bandas Destacadas a blanco */
+.header nav a {
+    background-color: #4CAF50;
+    color: #fff; /* Cambia el color del texto si es necesario */
+}
+
+/* Cambia el color de fondo de los botones al pasar el ratón sobre ellos */
+.header nav a:hover {
+    background-color: #4CAF50; /* Puedes cambiar este color si lo deseas */
+    color: #fff; /* Cambia el color del texto si es necesario */
+}
+/* Agrega estos estilos a tu archivo de estilos (puede ser estiloWeb.css) */
+.nota-musical {
+    font-size: 24px; /* Tamaño de fuente ajustable según tus necesidades */
+    margin-left: 10px; /* Ajusta el margen según tus necesidades */
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #3498db; /* Color azul, puedes cambiarlo según tu esquema de colores */
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandas de EcoEquilibrio Fest</title>
+    <link rel="stylesheet" href="css/estiloWeb.css">
+    <link rel="stylesheet" href="css/estiloBotones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js"></script>
+
+    <style>
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white; /* Color blanco para el icono de hamburguesa */
+        }
+
+        .menu {
+            display: none;
+            position: fixed;
+            top: 60px; /* Ajusta la posición vertical según tus necesidades */
+            right: 20px; /* Ajusta la posición horizontal según tus necesidades */
+            width: 150px; /* Ajusta el ancho según tus necesidades */
+            background-color: rgb(77, 73, 73);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        /* Añadido estilo para ajustar tamaño de imágenes */
+        .banda img,
+        .artista img,
+        .dj img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilo específico para las bandas para que se vean un poco más grandes */
+        .banda img {
+            max-width: 120%;
+        }
+
+        .flecha {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+    <a href="#" onclick="toggleDarkMode()">Modo Oscuro</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "flex" : "none";
+    }
+
+    function toggleDarkMode() {
+        var body = document.body;
+        body.style.backgroundColor = (body.style.backgroundColor === "black") ? "white" : "black";
+        var footer = document.querySelector('.footer');
+        var redesSociales = document.querySelector('.redes-sociales');
+        var flecha = document.querySelector('.flecha');
+        // Cambia el color de fondo y el color del texto en el pie de página y enlaces de redes sociales
+        footer.style.backgroundColor = (footer.style.backgroundColor === "black") ? "white" : "black";
+        redesSociales.style.color = (redesSociales.style.color === "white") ? "black" : "white";
+        // Cambia el color de la flecha
+        flecha.style.color = (flecha.style.color === "white") ? "black" : "white";
+    }
+</script>
+
+    <header class="header">
+        <img src="fotos/logo.jpeg" alt="Logo del Festival" height="150" width="150">
+        <h1>Bandas y Artistas Invitados</h1>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="paginaBoletos.html">Compra de Boletos</a>
+        </nav>
+            <p>¡Un evento musical que no te podes perder!</p>
+    </header>
+
+    <section class="bandas">
+        <div class="container">
+            <h2>Bandas Invitadas</h2>
+            <article class="banda">
+                <img src="fotos/coldplay.jpeg" alt="Coldplay">
+                <h3>Coldplay</h3>
+                <button class="nota-musical" onclick="toggleAudio('coldplayAudio', 'coldplayAudio')">&#9835;</button>
+                <p>Una banda icónica que ha dejado una marca indeleble en la industria musical con su estilo distintivo y letras emotivas. 
+                    Reconocidos por su habilidad para crear melodías cautivadoras, han logrado conectar con audiencias globales, ofreciendo una experiencia sonora única que trasciende géneros y generaciones.</p>
+            <audio id="coldplayAudio" src="canciones/Coldplay.mp3"></audio>
+            </article>
+
+            <article class="banda">
+                <img src="fotos/imagined.jpeg" alt="Imagine Dragons">
+                <h3>Imagine Dragons</h3>
+                <button class="nota-musical" onclick="toggleAudio('dragonsAudio', 'dragonsAudio')">&#9835;</button>
+                <p>Una banda versátil que fusiona rock, pop y electrónica para crear una experiencia musical única e inolvidable. 
+                    Con su distintivo enfoque en la mezcla de géneros, han logrado cautivar a audiencias de todo el mundo, entregando una combinación emocionante de sonidos que deja una impresión duradera en la escena musical contemporánea.</p>
+            <audio id="dragonsAudio" src="canciones/ImagineDragons.mp3"></audio>
+            </article>
+        </div>
+    </section>
+
+    <section class="artistas individuales">
+        <div class="container">
+            <h2>Artistas Invitados</h2>
+            <article class="artista">
+                <img src="fotos/JonBonJovi.image" alt="Artista 1">
+                <h3>Jon Bon Jovi</h3>
+                <button class="nota-musical" onclick="toggleAudio('bonjoviAudio', 'bonjoviAudio')">&#9835;</button>
+                <p> 
+                    Un talentoso músico solista, Jon Bon Jovi ha conquistado escenarios internacionales con su música cautivadora. 
+                    Su destreza musical y su voz única lo han convertido en una figura destacada en la escena musical, dejando una huella perdurable en el panorama artístico a nivel mundial.</p>
+            <audio id="bonjoviAudio" src="canciones/BonJovi.mp3"></audio>
+            </article>
+
+            <article class="artista">
+                <img src="fotos/solari.jpeg" alt="Artista 2">
+                <h3>Indio Solari</h3>
+                <button class="nota-musical" onclick="toggleAudio('indioAudio', 'indioAudio')">&#9835;</button>
+                <p> 
+                    Un virtuoso en su instrumento y con una voz única, El Indio Solari ha conquistado el corazón de audiencias en todo el mundo. 
+                    Su destreza musical y su estilo vocal distintivo lo posicionan como una figura influyente en la escena musical, dejando una marca perdurable en el panorama artístico internacional.</p>
+            <audio id="indioAudio" src="canciones/Ji Ji Ji.mp3"></audio>
+            </article>
+        </div>
+    </section>
+
+    <section class="djs-invitados">
+        <div class="container">
+            <h2>DJs Invitados</h2>
+            <article class="dj">
+                <img src="fotos/MartinGarrix.jpeg" alt="DJ 1">
+                <h3>Martin Garrix</h3>
+                <button class="nota-musical" onclick="toggleAudio('martinAudio', 'martinAudio')">&#9835;</button>
+                <p> 
+                   Un maestro de las mezclas, Martin Garrix, hará vibrar a la audiencia con sus sets llenos de energía. 
+                   Su habilidad para crear experiencias musicales envolventes lo ha catapultado como una figura destacada en la escena electrónica, llevando su talento a escenarios internacionales y cautivando a audiencias de todo el mundo.</p>
+            <audio id="martinAudio" src="canciones/MartinGarrix&Brooks.mp3"></audio>
+            </article>
+
+            <article class="dj">
+                <img src="fotos/Skrillex_Principal.jpeg" alt="DJ 2">
+                <h3>Skrillex</h3>
+                <button class="nota-musical" onclick="toggleAudio('skrillexAudio', 'skrillexAudio')">&#9835;</button>
+                <p> 
+                    Un experto en crear atmósferas envolventes, Skrillex, te transportará a otro mundo a través de la música electrónica. 
+                    Con su maestría en la producción, ha consolidado su posición como una figura influyente en la escena musical, ofreciendo experiencias sonoras únicas que cautivan a audiencias de todo el mundo.</p>
+            <audio id="skrillexAudio" src="canciones/Skrillex.mp3"></audio>
+            </article>
+
+            <article class="dj">
+                <img src="fotos/davidgetta.jpeg" alt="DJ 3">
+                <h3>David Guetta</h3>
+                <button class="nota-musical" onclick="toggleAudio('davidAudio', 'davidAudio')">&#9835;</button>
+                <p> 
+                    David Guetta, un maestro en la creación de atmósferas envolventes, te transportará a otro mundo a través de su música electrónica. 
+                    Reconocido por su habilidad para mezclar ritmos cautivadores, Guetta ha dejado una marca duradera en la escena musical, elevando la experiencia auditiva y llevando la emoción a audiencias globales con sus sets emocionantes y envolventes.</p>
+            <audio id="davidAudio" src="canciones/David Guetta & Sia.mp3"></audio>
+            </article>
+
+        </div>
+    </section>
+
+
+<footer class="footer">
+                <div class="redes-sociales">
+        <a href="https://www.facebook.com/tu_pagina" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/tu_pagina" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/tu_pagina" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+        <p>&copy; 2023 @EcoEquilibrio Cuidamos-Fest.</p>
+        <button class="flecha" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+</body>
+
+</html>

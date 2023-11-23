@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoEquilibrio Fest</title>
+    <link rel="stylesheet" href="css/estiloWeb.css">
+    <link rel="stylesheet" href="css/estiloBotones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-Vkoo8qZxniFEX9S4fjR9H5R82ZgqFmk4uo2N5Mbe5rLl/GsGnAYdL" crossorigin="anonymous">
+
+    <style>
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white; /* Color blanco para el icono de hamburguesa */
+        }
+
+        .menu {
+            display: none;
+            position: fixed;
+            top: 60px; /* Ajusta la posición vertical según tus necesidades */
+            right: 20px; /* Ajusta la posición horizontal según tus necesidades */
+            width: 150px; /* Ajusta el ancho según tus necesidades */
+            background-color: rgb(77, 73, 73);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .flecha {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+  
+</head>
+
+<body>
+
+    <!--<audio id="miMusica" controls loop>
+        <source src="ruta/de/tu/musica.mp3" type="audio/mp3">
+    </audio>-->
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+    <a href="#" onclick="toggleDarkMode()">Modo Oscuro</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "flex" : "none";
+    }
+
+    function toggleDarkMode() {
+        var body = document.body;
+        body.style.backgroundColor = (body.style.backgroundColor === "black") ? "white" : "black";
+        var footer = document.querySelector('.footer');
+        var redesSociales = document.querySelector('.redes-sociales');
+        var flecha = document.querySelector('.flecha');
+        // Cambia el color de fondo y el color del texto en el pie de página y enlaces de redes sociales
+        footer.style.backgroundColor = (footer.style.backgroundColor === "black") ? "white" : "black";
+        redesSociales.style.color = (redesSociales.style.color === "white") ? "black" : "white";
+        // Cambia el color de la flecha
+        flecha.style.color = (flecha.style.color === "white") ? "black" : "white";
+    }
+</script>
+
+
+    <header class="header">
+        <img src="fotos/logo.jpeg" alt="Logo del Festival" height="150" width="150">
+        <h1>EcoEquilibrio Fest</h1>
+        <nav class="nav">
+            <a href="#contacto">Contacto</a>
+            <a href="paginaBanda.html">Bandas</a>
+            <a href="paginaMerch.html">Merch</a>
+            <a href="paginaBoletos.html">Boletos</a>
+        </nav>
+        <p>¡Apoya nuestra ONG para un mundo mejor!</p>
+        
+    </header>
+
+    <section class="main">
+        <div class="container">
+            <h2>Cuidamos Fest</h2>
+            <p class="descripcion">
+                Cuidamos Fest es un festival de música que busca promover la conciencia ambiental a través de la música. El festival contará con una amplia variedad de artistas, desde géneros populares hasta música independiente, todos comprometidos con la sostenibilidad. Además, el festival contará con una serie de actividades educativas y de concientización sobre el medio ambiente, auspiciadas por EcoEquilibrio.
+            </p>
+            <div class="imagenes">
+                <img src="fotos/elec.jpeg" alt="Imagen 1">
+                <img src="fotos/joda.jpeg" alt="Imagen 2">
+            </div>
+        </div>
+    </section>
+
+    <section class="quienesSomos" id="quienesSomos">
+        <div class="container">
+            <h2>Quienes Somos</h2>
+            <p class="descripcion">
+                Un Festival Disruptivo, integrador, novedoso, creativo, flexible y de vanguardia. Radicado en el corazón de la Costa Caribe Colombiana y Latinoamericana: Cartagena de Indias, La Heroica punto de encuentro de todas las culturas.
+            </p>
+        </div>
+    </section>
+
+    <section class="galeria" id="galeria">
+        <div class="container">
+            <h2>Galería</h2>
+            <div class="imagenes">
+                <img src="fotos/gente.jpeg" alt="Imagen 3">
+                <img src="fotos/color.jpeg" alt="Imagen 4">
+                <img src="fotos/noche.jpeg" alt="Imagen 5">
+            </div>
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <form action="procesar_contacto.php" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea><br>
+
+                <button type="submit" class="boton">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+  
+<footer class="footer">
+               <div class="redes-sociales">
+        <a href="https://www.facebook.com/tu_pagina" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/tu_pagina" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/tu_pagina" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+        <p>&copy;2023 @EcoEquilibrio Cuidamos-Fest.</p>
+        <button class="flecha" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer> 
+
+</body>
+
+</html>

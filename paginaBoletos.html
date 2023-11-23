@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Boletos EcoEquilibrio Fest</title>
+    <link rel="stylesheet" href="css/estiloWeb.css">
+    <link rel="stylesheet" href="css/estiloBotones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-1qSZo1c8P5R0FX8RZ1RZSDfMzNl/MK1+PeRPlM+Y98UZ2KlMxumq3Di4aUG56rNsRbJ/nQffsbUlaKl0rDE4ZDQ==" crossorigin="anonymous" />
+    <style>
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white; /* Color blanco para el icono de hamburguesa */
+        }
+
+        .menu {
+            display: none;
+            position: fixed;
+            top: 60px; /* Ajusta la posición vertical según tus necesidades */
+            right: 20px; /* Ajusta la posición horizontal según tus necesidades */
+            width: 150px; /* Ajusta el ancho según tus necesidades */
+            background-color: rgb(77, 73, 73);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .informacionPago img {
+        max-width: 20px; /* Tamaño reducido */
+        height: auto;
+        }
+
+        .metodosPago {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        }
+
+        .metodosPago li {
+        margin: 20px;
+        }
+
+        .opcionesBoletos {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .opcionBoleto {
+            max-width: 300px;
+            padding: 20px;
+            background-color: #4CAF49;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .opcionBoleto h2 {
+            margin-bottom: 10px;
+        }
+
+        .opcionBoleto p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .opcionBoleto p:last-child {
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+
+        .opcionBoleto .boton {
+            background-color: #4CAF49;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .opcionBoleto .boton:hover {
+            background-color: #ffffff;
+        }
+
+        .flecha {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+    <a href="#" onclick="toggleDarkMode()">Modo Oscuro</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "flex" : "none";
+    }
+
+    function toggleDarkMode() {
+        var body = document.body;
+        body.style.backgroundColor = (body.style.backgroundColor === "black") ? "white" : "black";
+        var footer = document.querySelector('.footer');
+        var redesSociales = document.querySelector('.redes-sociales');
+        var flecha = document.querySelector('.flecha');
+        // Cambia el color de fondo y el color del texto en el pie de página y enlaces de redes sociales
+        footer.style.backgroundColor = (footer.style.backgroundColor === "black") ? "white" : "black";
+        redesSociales.style.color = (redesSociales.style.color === "white") ? "black" : "white";
+        // Cambia el color de la flecha
+        flecha.style.color = (flecha.style.color === "white") ? "black" : "white";
+    }
+</script>
+
+    <header class="header">
+        <img src="fotos/logo.jpeg" alt="Logo del Festival" height="150">
+        <h1>Compra de Boletos</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="paginaBanda.html">Bandas</a>
+        </nav>
+            <p>Aquí encontrarás precios y métodos de pago para los boletos.</p>
+    </header>
+   
+    <section class="opcionesBoletos">
+        <article class="opcionBoleto">
+            <h2>Pase Diario</h2>
+            <p>Acceso para un día del festival.</p>
+            <p>Precio: $50,00</p>
+            <a href="procesar_pedido.php"><button class="boton">Comprar</button></a>
+        </article>
+
+        <article class="opcionBoleto">
+            <h2>Pase de Fin de Semana</h2>
+            <p>Acceso para los dos días del fin de semana del festival.</p>
+            <p>Precio: $80,00</p>
+            <a href="procesar_pedido.php"><button class="boton">Comprar</button></a>
+        </article>
+
+        <article class="opcionBoleto">
+            <h2>Pase VIP</h2>
+            <p>Acceso a áreas VIP y asientos preferenciales.</p>
+            <p>Precio: $120,00</p>
+            <a href="procesar_pedido.php"><button class="boton">Comprar</button></a>
+        </article>
+    </section>
+
+    <section id="informacionPago">
+        <h2>Información de Pago</h2>
+            <ul class="metodosPago">
+                <li><img src="fotos/linkpago.png" width="30"></li>
+                <li><img src="fotos/logo-pago-facil.png" width="30"></li>
+                <li><img src="fotos/logo-rapipago.png" width="60"></li>
+                <li><img src="fotos/Mercado-pago.png" width="60"></li>
+                <li><img src="fotos/PayPallogo.png" width="60"></li>
+                <li><img src="fotos/mastercad.jpeg" width="60"></li>
+                <li><img src="fotos/visalogo.png" width="50"></li>
+        </ul>
+
+    </section>
+
+<footer class="footer">
+                <div class="redes-sociales">
+        <a href="https://www.facebook.com/tu_pagina" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/tu_pagina" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/tu_pagina" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+        <p>&copy; 2023 @EcoEquilibrio Cuidamos-Fest.</p>
+        <button class="flecha" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+</body>
+
+</html>

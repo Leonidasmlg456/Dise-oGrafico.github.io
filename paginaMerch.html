@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merch del Festival EcoEquilibrio Fest</title>
+    <link rel="stylesheet" href="css/estiloWeb.css">
+    <link rel="stylesheet" href="css/estiloBotones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white; /* Color blanco para el icono de hamburguesa */
+        }
+
+        .menu {
+            display: none;
+            position: fixed;
+            top: 60px; /* Ajusta la posición vertical según tus necesidades */
+            right: 20px; /* Ajusta la posición horizontal según tus necesidades */
+            width: 150px; /* Ajusta el ancho según tus necesidades */
+            background-color: rgb(77, 73, 73);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Elimina el estilo de posicionamiento del .nav a */
+        .nav a {
+            margin-top: 0; /* Cambiado de 50 a 0 */
+            margin-left: 20px; /* Añade margen a la izquierda */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+    <a href="#" onclick="toggleDarkMode()">Modo Oscuro</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "flex" : "none";
+    }
+
+    function toggleDarkMode() {
+        var body = document.body;
+        body.style.backgroundColor = (body.style.backgroundColor === "black") ? "white" : "black";
+        var footer = document.querySelector('.footer');
+        var redesSociales = document.querySelector('.redes-sociales');
+        var flecha = document.querySelector('.flecha');
+        // Cambia el color de fondo y el color del texto en el pie de página y enlaces de redes sociales
+        footer.style.backgroundColor = (footer.style.backgroundColor === "black") ? "white" : "black";
+        redesSociales.style.color = (redesSociales.style.color === "white") ? "black" : "white";
+        // Cambia el color de la flecha
+        flecha.style.color = (flecha.style.color === "white") ? "black" : "white";
+    }
+</script>
+
+    <header class="header">
+    <!--<div class="logo-container">-->
+        <div class="logo-info">
+            <img src="fotos/logo.jpeg" alt="Logo del Festival" height="150" width="150">
+            <h1  style="display: inline-block; vertical-align: middle;">Merch de EcoEquilibrio</h1>
+        </div>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="productos">Productos</a>
+            <a href="pedido">Realiza tu pedido</a>
+        </nav>
+        <p>¡Apoyanos comprando nuestro Merch!</p>
+    </header>
+
+   <style>
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .producto {
+            max-width: 300px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .metodos-pago img {
+            max-width: 60px;
+            height: auto;
+        }
+
+        .flecha {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+<!--</head>
+
+<body>
+    <header class="header">
+    <div class="logo-container">
+        <div class="logo-info">
+            <img src="fotos/logo.jpeg" alt="Logo del Festival" height="100" width="100">
+            <h1>Merch de EcoEquilibrio</h1>
+        </div>
+        <nav class="nav">
+            <a href="EcoEquilibrio.html">Inicio</a>
+            <a href="productos">Productos</a>
+            <a href="formulario">Realiza tu pedido</a>
+        </nav>
+    </div>
+</header>-->
+
+    <section id="productos" class="productos">
+        <article class="producto">
+            <img src="fotos/vaso.jpeg" alt="Vaso Termico">
+            <h2>Vaso Termico</h2>
+            <p>Un vaso térmico reutilizable que mantiene tus bebidas calientes o frías por más tiempo. Ideal para llevar a todas partes y contribuir al cuidado del medio ambiente.</p>
+            <p>Precio: $250,00</p>
+            <button class="boton">Añadir al carrito</button>
+        </article>
+
+        <article class="producto">
+            <img src="fotos/mate.jpeg" alt="Equipo de Mate">
+            <h2>Equipo de Mate</h2>
+            <p>Un completo set de mate ecológico, incluye mate, bombilla y termo. Perfecto para disfrutar de la tradición con conciencia ambiental.</p>
+            <p>Precio: $500,00</p>
+            <button class="boton">Añadir al carrito</button>
+        </article>
+        
+    </section>
+
+    <section id="formulario" class="formulario">
+        <h2>Realiza tu pedido</h2>
+        <form action="procesar_pedido.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="producto">Producto:</label>
+            <select id="producto" name="producto" required>
+                <option value="Vaso Termico">Vaso Termico</option>
+                <option value="Equipo de Mate">Equipo de Mate</option>
+               
+            </select><br>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" required><br>
+
+            <button type="submit" class="boton">Realizar pedido</button>
+        </form>
+    </section>
+
+    <section id="metodos-pago" class="metodos-pago">
+        <h2>Métodos de Pago</h2>
+        <img src="fotos/linkpago.png" width="30">
+        <img src="fotos/logo-pago-facil.png" width="30">
+        <img src="fotos/logo-rapipago.png" width="60">
+        <img src="fotos/Mercado-pago.png" width="60">
+        <img src="fotos/PayPallogo.png" width="60">
+        <img src="fotos/mastercad.jpeg" width="60">
+        <img src="fotos/visalogo.png" width="50">
+    </section>
+
+<footer class="footer">
+            <div class="redes-sociales">
+        <a href="https://www.facebook.com/tu_pagina" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/tu_pagina" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/tu_pagina" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+        <p>&copy; 2023 @EcoEquilibrio Cuidamos-Fest.</p>
+        <button class="flecha" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+    
+</body>
+
+</html>

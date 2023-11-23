@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: #4CAF50; /* Verde claro */
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Blanco */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    color: #4CAF50; /* Verde claro */
+}
+
+.descripcion,
+.descripcionQuienesSomos {
+    font-size: 16px;
+}
+
+.imagenes img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.galeria .imagenes img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contacto label,
+.contacto textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.boton {
+    background-color: #4CAF50; /* Verde claro */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.boton:hover {
+    background-color: #45a049; /* Verde más oscuro */
+}
+
+.footer {
+    background-color: #4CAF50; /* Verde claro */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.redes-sociales {
+   display: flex;
+   justify-content: space-between;
+   width: 150px; /* Ajusta el ancho según tus necesidades */
+}
+
+.fab {
+   font-size: 24px; /* Ajusta el tamaño según tus necesidades */
+   color: #ffffff; /* Cambia el color según tus preferencias */
+}
